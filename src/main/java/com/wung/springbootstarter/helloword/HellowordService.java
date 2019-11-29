@@ -6,7 +6,7 @@ package com.wung.springbootstarter.helloword;
 /**
  * @author wung 2019-11-28.
  */
-public class HelloWordService {
+public class HellowordService {
 	
 	private String word;
 	

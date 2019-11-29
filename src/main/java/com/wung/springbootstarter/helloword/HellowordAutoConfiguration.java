@@ -17,18 +17,18 @@ import org.springframework.context.annotation.Configuration;
 // 将 application.properties 的相关的属性字段与该类一一对应，并生成 Bean
 @EnableConfigurationProperties(HellowordProperties.class)
 // 当 HelloworldService 在类路径的下
-@ConditionalOnClass({HelloWordService.class})
+@ConditionalOnClass({HellowordService.class})
 public class HellowordAutoConfiguration {
 	
 	@Autowired
 	private HellowordProperties hellowordProperties;
 	
 	@Bean
-	@ConditionalOnMissingBean(HelloWordService.class)
-	public HelloWordService helloWordService() {
-		HelloWordService helloWordService = new HelloWordService();
-		helloWordService.setWord(hellowordProperties.getWord());
-		return helloWordService;
+	@ConditionalOnMissingBean(HellowordService.class)
+	public HellowordService helloWordService() {
+		HellowordService hellowordService = new HellowordService();
+		hellowordService.setWord(hellowordProperties.getWord());
+		return hellowordService;
 	}
 	
 }
